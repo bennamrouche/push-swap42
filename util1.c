@@ -6,11 +6,26 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 18:42:38 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/04 21:39:29 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:31:28 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+int check_repeat(t_data *data, long nb)
+{
+	int i;
+
+	i = 0;
+	while (i < data->len_a)
+	{
+		if (data->a[i] == nb)
+			ft_error(ERROR);
+		i++;
+	}
+
+	return (TRUE);
+}
 
 char	*join_args(int ac, char **arg)
 {
@@ -36,16 +51,30 @@ char	*join_args(int ac, char **arg)
 	return tmp;
 }
 
-int check(t_data *data, char *args)
+
+void parse(t_data *data, char *args)
 {
-	char **num ;
+	char	**num;
+	size_t	len;
+	long nb;
 
 	num = ft_split(args, ' ');
+	len = ft_strlen2(num);
+	data->a = (int *) malloc(len * sizeof(int));
+	printf("split and malloc ok ");
 	while (*num)
 	{
-		if (is_digit(num) != TRUE)
-			return (FALSE);
-		if (is)
+		if (data->a && is_digit(*num) != TRUE)
+			ft_error(ERROR);
+		nb = ft_atoi(*num);
+		if (nb > INT_MAX || nb < INT_MIN)
+			ft_error(ERROR);
+		check_repeat(data, nb);
+		data->a[data->len_a] = (int) nb;
+		data->len_a += 1;
+		num++;
 	}
-
+free2((num - len));
 }
+
+
