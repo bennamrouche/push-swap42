@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 20:51:41 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/09 20:29:38 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:27:04 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void rrx(int *tab, int len, char *str)
 
 void rrr(t_data *data)
 {
-	rrx(data->a, data->len_a, 0);
-	rrx(data->b, data->leb_b, 0);
+	rrx(data->stack_a.pt, data->stack_a.len, 0);
+	rrx(data->stack_b.pt, data->stack_b.len, 0);
 	write(1, "rrx\n", 4);
 }
 void px(int *tab1, int *len1, int *tab2, int *len2, int max)

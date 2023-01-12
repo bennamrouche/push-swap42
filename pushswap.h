@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:22:52 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/05 20:39:18 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:52:06 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,29 @@
 // dfine boolean var
 # define TRUE  1
 # define FALSE 0
+
+typedef struct s_int2
+{
+	int	*pt;
+	int	len;
+}t_int2;
+
 typedef struct s_data
 {
-	int *a;
-	int *b;
-	int len_a;
-	int leb_b;
-
+	t_int2	stack_a;
+	t_int2	stack_b;
+	int		maxisze;
 }t_data;
-
+//util 1
 char	*join_args(int ac, char **arg);
 void	parse(t_data *data, char *args);
 void	free2(char **pt);
+//util 2
+t_int2	*create_t_int2(int len);
+
+	// array
+int		indexofmax(int *arr, int len);
+int		*intset(int *tab, int size, int set);
+int *allocset(int len, int set);
+
 #endif

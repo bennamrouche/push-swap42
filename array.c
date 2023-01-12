@@ -1,59 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string2.c                                          :+:      :+:    :+:   */
+/*   array.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 20:01:28 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/12 16:12:51 by ebennamr         ###   ########.fr       */
+/*   Created: 2023/01/10 21:19:18 by ebennamr          #+#    #+#             */
+/*   Updated: 2023/01/12 15:52:26 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-
-int	is_digit(char *str)
+int	indexofmax(int *arr, int len)
 {
-	if (*str && (*str == '+' || *str == '-'))
-		str++;
-	if (*str == '\0')
-		return (FALSE);
-	while (*str)
-	{
-		if (*str > '9' || *str < '0')
-			return (FALSE);
-		str++;
-	}
-	return (TRUE);
-}
-size_t ft_strlen2( char **str)
-{
-int len;
+	int	i;
+	int	index;
+	int	max;
 
-len = 0;
-
-	while (*str)
-	{
-		len++;
-		str++;
-	}
-	return (len);
-}
-void *cmalloc(size_t len)
-{
-	char *pt;
-	size_t i;
-
-	pt = malloc(len);
-	i = 0 ;
-	if (pt == 0)
-		return 0;
+	index = 0;
+	i = 0;
+	max = arr[0];
 	while (i < len)
 	{
-		pt[i] = 0;
+		if (max < arr[i])
+		{
+			max = arr[i];
+			index = i;
+		}
 		i++;
 	}
-	return (void *)pt;
+	return (index);
 }
 
+int	*intset(int *tab, int size, int set)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		tab[i] = set;
+		i++;
+	}
+	return (tab);
+}
+int *allocset(int len, int set)
+{
+	int *addr;
+
+	addr = (int *)cmalloc(len * sizeof(int));
+	if (addr == 0)
+		return 0;
+	intset(addr, len, set);
+	return (addr);
+}

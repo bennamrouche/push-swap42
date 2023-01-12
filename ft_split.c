@@ -6,12 +6,11 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:53:34 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/04 21:27:47 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/10 21:33:18 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-
 
 static char	**free_all(char **list)
 {

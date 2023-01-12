@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:54:18 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/09 20:43:17 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:22:04 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ long		ft_atoi(char *str);
 int			is_digit(char *str);
 size_t		ft_strlen2(char **str);
 void		*cmalloc(size_t len);
-int			*intset(int *tab, int size, int set)
 #endif
