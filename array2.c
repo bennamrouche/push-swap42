@@ -1,59 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   string2.c                                          :+:      :+:    :+:   */
+/*   array2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 20:01:28 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/15 21:13:55 by ebennamr         ###   ########.fr       */
+/*   Created: 2023/02/04 11:02:36 by ebennamr          #+#    #+#             */
+/*   Updated: 2023/02/04 11:12:09 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-
-int	is_digit(char *str)
+int	array_isequal(t_int2 *tab1,t_int2 *tab2)
 {
-	if (*str && (*str == '+' || *str == '-'))
-		str++;
-	if (*str == '\0')
+	int	i;
+
+	i = 0;
+	if (tab1->len != tab2->len)
 		return (FALSE);
-	while (*str)
+	while (i < tab1->len)
 	{
-		if (*str > '9' || *str < '0')
+		if (isexits(tab1,tab2->pt[i]) != TRUE)
 			return (FALSE);
-		str++;
+	i++;
 	}
 	return (TRUE);
 }
-size_t ft_strlen2( char **str)
-{
-int len;
 
-len = 0;
 
-	while (*str)
-	{
-		len++;
-		str++;
-	}
-	return (len);
-}
-void *cmalloc(size_t len)
-{
-	char *pt;
-	size_t i;
-
-	pt = malloc(len);
-	i = 0 ;
-	if (pt == 0)
-		return 0;
-	while (i < len)
-	{
-		pt[i] = 0;
-		i++;
-	}
-	return (void *)pt;
-}
 

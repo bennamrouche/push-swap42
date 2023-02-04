@@ -6,7 +6,7 @@
 #    By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/20 18:44:39 by ebennamr          #+#    #+#              #
-#    Updated: 2023/01/03 16:26:21 by ebennamr         ###   ########.fr        #
+#    Updated: 2023/02/03 13:06:54 by ebennamr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = cc
 NAME = fractol
 FLAG = -Wall -Wextra -Werror
-FRAMEWORK = -lmlx -framework OpenGL -framework AppKit
+
 SRC:= fractol.c complex.c key.c mouse.c string.c graphic.c
 
 INCLIDE =  const.h lib.h

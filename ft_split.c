@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:53:34 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/10 21:33:18 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/01/15 20:35:16 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static size_t	count_words(char const *string, char c)
 		}
 		i++;
 	}
+	if(count == 0)
+	ft_error(ERROR);
 	return (count);
 }
 

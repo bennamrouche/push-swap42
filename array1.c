@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 21:19:18 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/12 15:52:26 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/04 10:29:47 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,36 @@ int *allocset(int len, int set)
 		return 0;
 	intset(addr, len, set);
 	return (addr);
+}
+
+void	checksort(t_int2 *stack)
+{
+	int i;
+
+	if (stack->len < 2)
+		exit(0);
+	i = 0;
+	while (i < stack->len - 1)
+	{
+		if (stack->pt[i] > stack->pt[i + 1])
+			return ;
+		i++;
+	}
+	exit(0);
+
+}
+
+int	isexits(t_int2 *tab,int num)
+{
+	int i;
+
+	i = 0;
+	while (i < tab->len)
+	{
+		if (tab->pt[i] == num)
+				return (TRUE);
+		i++;
+	}
+return (FALSE);
+
 }
