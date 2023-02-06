@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 18:01:53 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/04 12:12:33 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:19:33 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ printf("----- stack -----\n");
 	}
 	printf("\n");
 	extract_lis(data, boot);
+	t_cmd cmd = searchofbest_move(data);
+	printf("%d %d %d %d",cmd.a_move,cmd.a_type,cmd.b_move,cmd.b_type);
+	//system("leaks a.out");
 }
 int	main(int ac, char **av)
 {

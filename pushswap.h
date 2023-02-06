@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 18:22:52 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/04 11:12:59 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:16:56 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-#include <stdio.h>
+# include <stdio.h>
 // define instruction
 # define ERROR "Error\n"
 # define SA  "sa\n"
@@ -30,6 +30,8 @@
 # define RRA "rra\n"
 # define RRB "rrb\n"
 # define RRR "rrr\n"
+#define TYPE_RX 0;
+#define TYPE_RRX 1;
 // dfine boolean var
 # define TRUE  1
 # define FALSE 0
@@ -46,6 +48,15 @@ typedef struct s_data
 	t_int2	*stack_b;
 	int		maxisze;
 }t_data;
+
+typedef struct s_cmd
+{
+	int	a_type;
+	int	a_move;
+	int	b_type;
+	int	b_move;
+}t_cmd;
+
 //util 1
 char	*join_args(int ac, char **arg);
 void	parse(t_data *data, char *args);
@@ -75,4 +86,6 @@ void	px(t_int2 *tab1, t_int2 *tab2, int max, char *str);
 // lis
 t_int2	*get_lis(int *stack, int len);
 void	extract_lis(t_data *data, t_int2 *lis_list);
+// alogo
+t_cmd searchofbest_move(t_data *data);
 #endif
