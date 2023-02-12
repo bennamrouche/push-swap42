@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 20:01:28 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/15 21:13:55 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/07 19:57:51 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,9 @@ void *cmalloc(size_t len)
 	return (void *)pt;
 }
 
+int min(int x,int y)
+{
+	if(x < y)
+	return x;
+	return y;
+}

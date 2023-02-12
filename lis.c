@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 21:21:21 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/04 12:15:45 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/07 17:56:20 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ t_int2	*fill(int *tab, int *t_len, int *t_index, int size)
 	t_int2 *sub;
 
 	index = indexofmax(t_len, size);
-	printf("indexof max %d", index);
 	sub = create_t_int2(t_len[index]);
-	printf("sub len %d\n",t_len[index]);
 	if (sub == 0)
 		ft_error(ERROR);
 	i = t_len[index] - 1;
@@ -81,9 +79,9 @@ void extract_lis(t_data *data ,t_int2 *lis_list)
 	while (array_isequal(data->stack_a,lis_list) != TRUE)
 	{
 		if (isexits(lis_list, data->stack_a->pt[0]))
-			rx(data->stack_a, RA);
+			 rx(data->stack_a, RA);
 		else
-			px(data->stack_a, data->stack_b, data->maxisze, PA);
+			 px(data->stack_a, data->stack_b, data->maxisze, PB);
 }
 
 }

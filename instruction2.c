@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 20:51:41 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/04 10:52:11 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/07 18:06:48 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void rrx(t_int2 *tab, char *str)
 	}
 	tab->pt[0] = tmp;
 	if (str != 0)
-		write(1, str, 3);
+		write(1, str, 4);
 }
 
 void rrr(t_data *data)
 {
 	rrx(data->stack_a, 0);
 	rrx(data->stack_b, 0);
-	write(1, "rrx\n", 4);
+	write(1, "rrr\n", 4);
 }
 void px(t_int2 *tab1, t_int2 *tab2, int max, char *str)
 {
