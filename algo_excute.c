@@ -1,57 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alogo2.c                                           :+:      :+:    :+:   */
+/*   algo_excute.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:43:43 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/10 17:30:59 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:03:26 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static void repeat_double(t_data *data,int num,int type)
+static void	repeat_double(t_data *data, int num, int type)
 {
 	while (num > 0)
 	{
-		if(type == TYPE_RRX)
-		 rrr(data);
-		 else
-		 rr(data);
+		if (type == TYPE_RRX)
+			rrr(data, RRR);
+		else
+			rr(data, RR);
 	num--;
 	}
-
 }
 
-static void repeat_a(t_int2 *data,int type, int num)
+static void	repeat_a(t_int2 *data, int type, int num)
 {
 	while (num > 0)
 	{
 		if (type == TYPE_RRX)
-			rrx(data,RRA);
+			rrx(data, RRA);
 		else
-		rx(data, RA);
+			rx(data, RA);
 		num--;
 	}
-
 }
-static void repeat_b(t_int2 *data, int type, int num)
+
+static void	repeat_b(t_int2 *data, int type, int num)
 {
 	while (num > 0)
 	{
 		if (type == TYPE_RRX)
-		rrx(data, RRB);
+			rrx(data, RRB);
 		else
-		rx(data, RB);
+			rx(data, RB);
 		num--;
 	}
 }
 
-void excute_move(t_data *data, t_cmd t)
+void	excute_move(t_data *data, t_cmd t)
 {
-	int min_val;
+	int	min_val;
+
 	while (t.a_move > 0 || t.b_move > 0)
 	{
 		if (t.b_move && t.a_move && t.a_type == t.b_type)
@@ -65,17 +65,19 @@ void excute_move(t_data *data, t_cmd t)
 		{
 			repeat_a(data->stack_a, t.a_type, t.a_move);
 			repeat_b(data->stack_b, t.b_type, t.b_move);
-			break;
+			break ;
 		}
 	}
-	px(data->stack_b,data->stack_a,data->maxisze,PA);
+	px(data->stack_b, data->stack_a, data->maxisze, PA);
 }
 
-void rotate_to_sort(t_data *data)
+void	rotate_to_sort(t_data *data)
 {
-	int id = indexofmax(data->stack_a->pt, data->stack_a->len);
-	if (id < data->stack_a->len / 2) /* <= rep <*/
-		repeat_a(data->stack_a, TYPE_RX,id + 1);
+	int	id;
+
+	id = indexofmax(data->stack_a->pt, data->stack_a->len);
+	if (id < data->stack_a->len / 2)
+		repeat_a(data->stack_a, TYPE_RX, id + 1);
 	else
 		repeat_a(data->stack_a, TYPE_RRX, data->stack_a->len - id - 1);
 }

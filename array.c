@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 21:19:18 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/10 12:05:17 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/13 16:13:57 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,21 @@ int	*intset(int *tab, int size, int set)
 	}
 	return (tab);
 }
-int *allocset(int len, int set)
-{
-	int *addr;
 
-	addr = (int *)cmalloc(len * sizeof(int));
+int	*allocset(int len, int set)
+{
+	int	*addr;
+
+	addr = (int *)malloc_set(len * sizeof(int));
 	if (addr == 0)
-		return 0;
+		return (0);
 	intset(addr, len, set);
 	return (addr);
 }
 
 void	checksort(t_int2 *stack)
 {
-	int i;
+	int	i;
 
 	if (stack->len < 1)
 		exit(0);
@@ -70,20 +71,18 @@ void	checksort(t_int2 *stack)
 		i++;
 	}
 	exit(0);
-
 }
 
-int	isexits(t_int2 *tab,int num)
+int	isexits(t_int2 *tab, int num)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < tab->len)
 	{
 		if (tab->pt[i] == num)
-				return (TRUE);
+			return (TRUE);
 		i++;
 	}
-return (FALSE);
-
+	return (FALSE);
 }

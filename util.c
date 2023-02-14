@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util1.c                                            :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 18:42:38 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/15 21:32:18 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:57:35 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int check_repeat(t_data *data, long nb)
+static int	check_repeat(t_data *data, long nb)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < data->stack_a->len)
@@ -23,7 +23,6 @@ int check_repeat(t_data *data, long nb)
 			ft_error(ERROR);
 		i++;
 	}
-
 	return (TRUE);
 }
 
@@ -43,20 +42,19 @@ char	*join_args(int ac, char **arg)
 		if (mid == 0)
 			ft_error(ERROR);
 		tmp = ft_strjoin(mid, arg[i]);
-			free(mid);
+		free(mid);
 		if (tmp == 0)
 			ft_error(ERROR);
 		i++;
 	}
-	return tmp;
+	return (tmp);
 }
 
-
-void parse(t_data *data, char *args)
+void	parse(t_data *data, char *args)
 {
 	char	**num;
 	size_t	len;
-	long nb;
+	long	nb;
 
 	num = ft_split(args, ' ');
 	len = ft_strlen2(num);
@@ -77,7 +75,38 @@ void parse(t_data *data, char *args)
 	data->maxisze = len;
 	data->stack_b = create_t_int2(len);
 	data->stack_b->len = 0;
-free2((num - len));
+	free2((num - len));
 }
 
+t_int2	*create_t_int2(int len)
+{
+	t_int2	*t;
 
+	t = (t_int2 *)malloc_set(sizeof(t_int2));
+	if (t == 0)
+		return (NULL);
+	t->pt = malloc_set(len * sizeof(int));
+	if (t->pt == 0)
+	{
+		free(t);
+		return (0);
+	}
+	t->len = len;
+	return (t);
+}
+
+int	array_isequal(t_int2 *tab1, t_int2 *tab2)
+{
+	int	i;
+
+	i = 0;
+	if (tab1->len != tab2->len)
+		return (FALSE);
+	while (i < tab1->len)
+	{
+		if (isexits(tab1, tab2->pt[i]) != TRUE)
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}

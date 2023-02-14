@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   string3.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:53:34 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/01/15 20:35:16 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:55:54 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-static char	**free_all(char **list)
-{
-	size_t	j;
-
-	j = 0;
-	while (list[j])
-	{
-		free(list[j]);
-		j++;
-	}
-	free(list);
-	ft_error(ERROR);
-	return (0);
-}
-
-static size_t	count_words(char const *string, char c)
+static	size_t	count_words(char const *string, char c)
 {
 	size_t	count;
 	int		i;
@@ -44,8 +29,8 @@ static size_t	count_words(char const *string, char c)
 		}
 		i++;
 	}
-	if(count == 0)
-	ft_error(ERROR);
+	if (count == 0)
+		ft_error(ERROR);
 	return (count);
 }
 
@@ -72,8 +57,36 @@ char	**ft_split(char *s, char c)
 			count++;
 		split[i] = ft_substr(&s[save], 0, count - save);
 		if (split[i++] == 0)
-			return (free_all(split));
+			ft_error(ERROR);
 	}
 	split[i] = 0;
 	return (split);
+}
+
+int	ft_strcmp(char *s1,char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] )
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (s1[i] - s2[i]);
+}
+
+void ft_bzero(void *pt, int n)
+{
+	int i;
+	unsigned char *str;
+	i = 0;
+	str = (unsigned char *)(pt);
+	while (i < n)
+	{
+		str[i] = 0;
+		i ++;
+	}
+
 }
