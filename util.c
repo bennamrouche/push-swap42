@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 18:42:38 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/13 15:57:35 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 18:57:09 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	parse(t_data *data, char *args)
 	data->stack_a->len = 0;
 	while (*num)
 	{
-		if (data->stack_a->pt && is_digit(*num) != TRUE)
+		if ((data->stack_a->pt && is_digit(*num) != TRUE) || !ft_strlen(*num))
 			ft_error(ERROR);
 		nb = ft_atoi(*num);
 		if (nb > INT_MAX || nb < INT_MIN)

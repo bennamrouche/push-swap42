@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:31:19 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/14 16:38:56 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:59:36 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	excute(t_data *data, char *pt)
 {
 	if (ft_strcmp(pt, RA) == 0)
-		rx(data->stack_a,0);
+		rx(data->stack_a, 0);
 	else if (ft_strcmp(pt, RB) == 0)
 		rx(data->stack_b, 0);
 	else if (ft_strcmp(pt, RR) == 0)
@@ -42,7 +42,6 @@ static void	excute(t_data *data, char *pt)
 
 void	read_ins(t_data *data)
 {
-
 	char	*input;
 	char	c;
 	int		i;
@@ -50,7 +49,7 @@ void	read_ins(t_data *data)
 	i = 0;
 	c = '\0';
 	input = malloc_set(6);
-	while (read(0, &c,1) > 0)
+	while (read(0, &c, 1) > 0)
 	{
 		if (i < 5)
 			input[i] = c;
@@ -83,10 +82,10 @@ static int	ft_checksort(t_int2 *stack)
 	return (TRUE);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_data	data;
-	char *tmp;
+	char	*tmp;
 
 	if (ac == 1)
 		exit(0);
@@ -95,8 +94,7 @@ int main(int ac, char **av)
 	read_ins(&data);
 	free(tmp);
 	if (ft_checksort(data.stack_a) == TRUE && data.stack_b->len == 0)
-		write(1,OK, 3);
+		write(1, OK, 3);
 	else
 		write(1, KO, 3);
-		system("leaks checker");
 }

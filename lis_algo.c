@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 21:21:21 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/13 16:43:13 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 17:41:25 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ t_int2	*get_lis(int *stack, int len)
 
 	lis_len = allocset(len, 1);
 	lis_indx = allocset(len, -1);
-	if (!lis_indx && !lis_len)
+	if (!lis_indx || !lis_len)
 		ft_error(ERROR);
 	find_sub(stack, lis_len, lis_indx, len);
 	sub = fill(stack, lis_len, lis_indx, len);

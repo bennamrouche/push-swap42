@@ -6,12 +6,11 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 18:01:53 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/14 16:13:15 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 18:33:36 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
-#include <stdio.h>
 
 static void	tree_sort(t_int2 *t, int im)
 {
@@ -88,6 +87,5 @@ int	main(int ac, char **av)
 		exit(0);
 	step1(&data, ac, av);
 	step2(&data);
-	//system("leaks push_swap");
 	checksort(data.stack_a);
 }

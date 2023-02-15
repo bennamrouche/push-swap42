@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 20:51:41 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/14 16:01:39 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:58:39 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	px(t_int2 *tab1, t_int2 *tab2, int max, char *str)
 	if (max <= tab2->len || tab1->len <= 0)
 		return ;
 	i = ++(tab2->len);
-	 while (i-- > 0)
+	while (i-- > 0)
 	{
 		tab2->pt[i] = tab2->pt[i - 1];
 	}

@@ -6,7 +6,7 @@
 /*   By: ebennamr <ebennamr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 17:53:34 by ebennamr          #+#    #+#             */
-/*   Updated: 2023/02/14 14:55:54 by ebennamr         ###   ########.fr       */
+/*   Updated: 2023/02/14 16:59:46 by ebennamr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ char	**ft_split(char *s, char c)
 	return (split);
 }
 
-int	ft_strcmp(char *s1,char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (s1[i] && s2[i] )
+	while (s1[i] && s2[i])
 	{
 		if (s1[i] != s2[i])
 			return (s1[i] - s2[i]);
@@ -77,10 +77,11 @@ int	ft_strcmp(char *s1,char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void ft_bzero(void *pt, int n)
+void	ft_bzero(void *pt, int n)
 {
-	int i;
-	unsigned char *str;
+	int				i;
+	unsigned char	*str;
+
 	i = 0;
 	str = (unsigned char *)(pt);
 	while (i < n)
@@ -88,5 +89,4 @@ void ft_bzero(void *pt, int n)
 		str[i] = 0;
 		i ++;
 	}
-
 }
